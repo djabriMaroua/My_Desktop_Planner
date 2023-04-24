@@ -2,18 +2,18 @@ package My_Desktop_planner;
 public class MyDesktopPlanner {
       /*-------------------------------------------------------*/
     //attribus 
-    Utilisateur [] listeUtilisateurs ; 
+    private Utilisateur [] listeUtilisateurs ; 
     
 
     /*-------------------------------------------------------*/
     //methods
-    void ajouterUtilisateur (){
+    public  void ajouterUtilisateur (){
 
     }
-    void supprimerUtilisateur (Utilisateur utilisateur ){
+    public  void supprimerUtilisateur (Utilisateur utilisateur ){
 
     }
-    void InstallerApp(){
+    public  void InstallerApp(){
         
     }
     }

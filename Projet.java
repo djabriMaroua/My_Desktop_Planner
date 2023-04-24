@@ -2,21 +2,21 @@ package My_Desktop_planner;
 public class Projet {
     /*-------------------------------------------------------*/
     //attribus 
-    Tache [ ] ListeTaches ; 
-    String nom ; 
-    String Description ; 
+    private Tache [ ] ListeTaches ; 
+    private String nom ; 
+    private String Description ; 
     //etat d'avancement 
 
     
 
     /*-------------------------------------------------------*/
     //methods
-    void AjouterTache(Tache tache ) {
+    public  void AjouterTache(Tache tache ) {
 
 
     }
 
-    void SupprimerTache(Tache tache ) {
+    public   void SupprimerTache(Tache tache ) {
 
 
     }

@@ -3,25 +3,25 @@ public class Utilisateur {
     
     /*-------------------------------------------------------*/
     //attribus 
-    String Pseudo ; 
-    Calendrier calendrier; 
-    Projet [] ListProjets; 
-    Badges badges; 
+   private String Pseudo ; 
+   private Calendrier calendrier; 
+   private Projet [] ListProjets; 
+   private Badges badges; 
 
 
 
     /*-------------------------------------------------------*/
     //methods
-    void CreerProjet(Projet projet){
+    public void CreerProjet(Projet projet){
 
     }
 
 
-    void ModifierProjet(Projet projet ) {
+    public  void ModifierProjet(Projet projet ) {
 
     }
 
-    void SupprimerProjet(Projet projet ){
+    public   void SupprimerProjet(Projet projet ){
 
     }
     
