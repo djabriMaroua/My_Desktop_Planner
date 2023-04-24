@@ -1,3 +1,5 @@
+package My_Desktop_planner;
+
 public class Jour {
     //ArrayList<Creneau> mes_creneau = new ArrayList<Creneau>();
    private int nb_tache_min;

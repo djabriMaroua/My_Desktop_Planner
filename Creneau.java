@@ -3,17 +3,17 @@ public class Creneau {
       /*-------------------------------------------------------*/
     //attribus 
 
-    Tache tache; 
-    double HeureDebut ; 
-    double HeureFin ; 
-    Double DureeMin ; 
-    boolean etat ; //bloqué ou pas 
+    private  Tache tache; 
+    private double HeureDebut ; 
+    private double HeureFin ; 
+    private Double DureeMin ; 
+    private boolean etat ; //bloqué ou pas 
 
 
     /*-------------------------------------------------------*/
     //methods
 
-    void Planifier(Tache tache ){
+    public  void Planifier(Tache tache ){
 
     }
     
