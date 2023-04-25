@@ -1,23 +1,30 @@
 package My_Desktop_planner;
+
+import java.util.ArrayList;
+
 public class MyDesktopPlanner {
-      /*-------------------------------------------------------*/
-    //attribus 
-    private Utilisateur [] listeUtilisateurs ; 
-    
-    //constructor -------------------------------------------
-    public MyDesktopPlanner(Utilisateur[] listeUtilisateurs) {
-      this.listeUtilisateurs = listeUtilisateurs;
-  } 
-  
-    /*-------------------------------------------------------*/
-    //methods
-    public  void ajouterUtilisateur (){
+  /*-------------------------------------------------------*/
+  // attribus
+  private ArrayList<Utilisateur> ListeUtilisateurs;
 
-    }
-    public  void supprimerUtilisateur (Utilisateur utilisateur ){
+  // constructor -------------------------------------------
+  public MyDesktopPlanner(ArrayList<Utilisateur> ListeUtilisateurs) {
+    this.ListeUtilisateurs = ListeUtilisateurs;
+  }
 
-    }
-    public  void InstallerApp(){
-        
-    }
-    }
+  // methods
+  /*-------------------------------------------------------*/
+  public void ajouterUtilisateur(Utilisateur utilisateur) {
+    ListeUtilisateurs.add(utilisateur);
+  }
+
+  /*-------------------------------------------------------*/
+  public void supprimerUtilisateur(Utilisateur utilisateur) {
+  ListeUtilisateurs.remove(utilisateur); 
+  }
+
+  /*-------------------------------------------------------*/
+  public void InstallerApp() {
+
+  }
+}
