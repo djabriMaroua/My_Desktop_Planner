@@ -7,6 +7,7 @@ public class Calendrier {
     private ArrayList<Jour>mes_jours= new ArrayList<Jour>();
     private Calendar date_debut;
     private Calendar date_fin;
+    
     public void planifier_mannu(){};
      public void planifier_auto(){};
      public void introduire_tache( ){};
