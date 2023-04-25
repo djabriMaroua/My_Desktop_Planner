@@ -52,7 +52,7 @@ public class Projet {
     /*-------------------------------------------------------*/
     //methods
     public  void AjouterTache(Tache tache ) {
-
+     ListeTaches.add(tache); 
 
     }
 
