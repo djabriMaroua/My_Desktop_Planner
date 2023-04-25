@@ -4,7 +4,11 @@ public class MyDesktopPlanner {
     //attribus 
     private Utilisateur [] listeUtilisateurs ; 
     
-
+    //constructor -------------------------------------------
+    public MyDesktopPlanner(Utilisateur[] listeUtilisateurs) {
+      this.listeUtilisateurs = listeUtilisateurs;
+  } 
+  
     /*-------------------------------------------------------*/
     //methods
     public  void ajouterUtilisateur (){
