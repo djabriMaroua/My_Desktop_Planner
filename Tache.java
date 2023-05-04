@@ -1,4 +1,5 @@
 package My_Desktop_planner;
+import java.time.Duration;
 import java.util.Calendar;
 
 public   class Tache {
@@ -20,7 +21,7 @@ public void setNom(String nom) {
     this.nom = nom;
 }
 private float duree;
-  public float getDuree() {
+  public Duration getDuree() {
     return duree;
 }
 public void setDuree(float duree) {
