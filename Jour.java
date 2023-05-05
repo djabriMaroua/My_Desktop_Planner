@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Scanner;
+
 public class Jour {
     private ArrayList<Creneau> mes_creneau;
     private ArrayList<Tache> mes_taches;
@@ -65,10 +67,7 @@ public class Jour {
 
               }
     }
-    public void encourager_user()
-    {
 
-    }
     public void classer_taches()
     {
         // Tri des éléments en fonction de leur priorité
@@ -90,14 +89,31 @@ public class Jour {
             }
         });
     }
-    public void planifier_jour_mannu()
-    {
+    public void planifier_jour_mannu() {
+        //affichages des creneau
+        for (int i = 0; i < this.mes_taches.size(); i++) {
+            System.out.println("la tache " + i + " est :" + this.mes_taches.get(i));
 
-        for (int i = 0; i < this.mes_creneau.size(); i++) {
+            System.out.println("Choisisez le numero de creneau dont vous voulez associe la tache");
+            Scanner scanner = new Scanner(System.in);
+            Creneau[] cr = new Creneau[2];
+            int num_creneau = scanner.nextInt();
             Creneau creneau = this.mes_creneau.get(i);
             Tache tache = this.mes_taches.get(i);
+            Duration duree1 = Duration.parse(creneau.Calculer_Duree());
+            if (duree1.compareTo(this.mes_creneau.get(i).getDureeMin()) > 0) {
 
-            creneau.Planifier(tache); // on appelle la méthode "planifier" de chaque créneau en y associant la tâche correspondante
+                this.mes_creneau.get(i).decomposerCreneau(tache, creneau);//decomposition du creneau
+                Duration duree2 = Duration.parse(cr[1].Calculer_Duree());
+                if (duree2.compareTo(this.mes_creneau.get(i).getDureeMin()) > 0) {
+                    this.mes_creneau.add(i, cr[0]);
+                    this.mes_creneau.add(i + 1, cr[1]);
+                    creneau = this.mes_creneau.get(i);
+                    creneau.Planifier(tache);
+                } else {
+                    creneau.Planifier(tache);//le creneau sera allouè entierement à la tache
+                }
+
+            }
         }
-    }
-}
+    }}
