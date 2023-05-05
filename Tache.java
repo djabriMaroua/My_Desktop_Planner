@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public   class Tache {
  private String nom;
- public Tache(String nom, float duree, String priorite, Calendar datelimite, String couleur, String etat,
+ public Tache(String nom, Duration duree, String priorite, Calendar datelimite, String couleur, String etat,
         int periodicite) {
     this.nom = nom;
     this.duree = duree;
@@ -20,11 +20,11 @@ public String getNom() {
 public void setNom(String nom) {
     this.nom = nom;
 }
-private float duree;
+private Duration duree;
   public Duration getDuree() {
-    return duree;
+    return this.duree ;
 }
-public void setDuree(float duree) {
+public void setDuree(Duration duree) {
     this.duree = duree;
 }
 private String priorite ;

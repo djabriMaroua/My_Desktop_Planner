@@ -2,6 +2,8 @@ package My_Desktop_planner;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.time.Duration;
+import java.time.LocalDateTime;
 public class Jour {
     private ArrayList<Creneau> mes_creneau;
     private ArrayList<Tache> mes_taches;
@@ -38,12 +40,30 @@ public class Jour {
     }
     public void planifier_jour_auto()
     {
+        Creneau [] cr= new Creneau[2];
         this.classer_taches();
         for (int i = 0; i < this.mes_creneau.size(); i++) {
             Creneau creneau = this.mes_creneau.get(i);
             Tache tache = this.mes_taches.get(i);
-            creneau.Planifier(tache); // on appelle la méthode "planifier" de chaque créneau en y associant la tâche correspondante
-        }
+            Duration duree1 = Duration.parse(creneau.Calculer_Duree());
+           if (duree1.compareTo(this.mes_creneau.get(i).getDureeMin())>0)
+           {
+               cr= this.mes_creneau.get(i).decomposerCreneau(tache,creneau);//decomposition du creneau
+               Duration duree2 = Duration.parse(cr[1].Calculer_Duree());
+               if (duree2.compareTo(this.mes_creneau.get(i).getDureeMin())>0)
+               {
+                   this.mes_creneau.add(i,cr[0]);
+                   this.mes_creneau.add(i+1,cr[1]);
+                   creneau = this.mes_creneau.get(i);
+                   creneau.Planifier(tache);
+               }
+               else
+               {
+                   creneau.Planifier(tache);//le creneau sera allouè entierement à la tache
+               }
+           }
+
+              }
     }
     public void encourager_user()
     {

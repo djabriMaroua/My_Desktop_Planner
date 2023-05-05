@@ -11,12 +11,12 @@ public class Creneau {
   private Tache tache;
   private LocalDateTime HeureDebut;
   private LocalDateTime HeureFin;
-  private Double DureeMin;
+  private Duration DureeMin;
   private boolean etat; // bloqué ou pas
   private boolean libre;
   // constructor ----------------------------------------------------
 
-  public Creneau(Tache tache, LocalDateTime HeureDebut, LocalDateTime HeureFin, Double DureeMin, boolean etat) {
+  public Creneau(Tache tache, LocalDateTime HeureDebut, LocalDateTime HeureFin, Duration DureeMin, boolean etat) {
     this.tache = tache;
     this.HeureDebut = HeureDebut;
     this.HeureFin = HeureFin;
@@ -51,11 +51,11 @@ public class Creneau {
     this.HeureFin = HeureFin;
   }
 
-  public Double getDureeMin() {
-    return DureeMin;
+  public Duration getDureeMin() {
+    return this.DureeMin;
   }
 
-  public void setDureeMin(Double DureeMin) {
+  public void setDureeMin(Duration DureeMin) {
     this.DureeMin = DureeMin;
   }
 
