@@ -4,10 +4,12 @@ import java.util.Calendar;
 
 public   class Tache {
  private String nom;
- public Tache(String nom, Duration duree, String priorite, Calendar datelimite, String couleur, String etat,
-        int periodicite) {
+ private Boolean decomposable;
+ public Tache(String nom, Boolean decomposable, Duration duree, String priorite, Calendar datelimite, String couleur, String etat,
+              int periodicite) {
     this.nom = nom;
-    this.duree = duree;
+     this.decomposable = decomposable;
+     this.duree = duree;
     this.priorite = priorite;
     this.datelimite = datelimite;
     this.couleur = couleur;
@@ -62,7 +64,13 @@ public int getPeriodicite() {
 public void setPeriodicite(int periodicite) {
     this.periodicite = periodicite;
 }
- 
 
 
+    public Boolean getDecomposable() {
+        return decomposable;
+    }
+
+    public void setDecomposable(Boolean decomposable) {
+        this.decomposable = decomposable;
+    }
 }
