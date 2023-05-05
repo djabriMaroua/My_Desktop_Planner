@@ -42,7 +42,7 @@ public class Jour {
     }
     public ArrayList<Tache> planifier_jour_auto()//cette methode retourne les taches non planifoe
     {
-        Creneau [] cr= new Creneau[2];
+        Creneau[] cr = new Creneau[2];
         ArrayList<Tache> tache_uns = new ArrayList<Tache>();
         for (int i = 0; i < this.mes_taches.size(); i++) {
             Creneau creneau = this.mes_creneau.get(i);
@@ -68,50 +68,46 @@ public class Jour {
 
            }*/
 
-               for (Creneau cre : this.mes_creneau) {
-                   Duration dur=  Duration.parse(cre.Calculer_Duree()) ;
-                   Duration dur1=  this.mes_taches.get(i).getDuree() ;
-                   int tr=0;
-                   if ((dur.compareTo(dur1)>=0) && cre.getlibre()==true)
-                   {
-                       tr=1;
-                       cr= this.mes_creneau.get(i).decomposerCreneau(tache,creneau);//decomposition du creneau
-                       Duration duree2 = Duration.parse(cr[1].Calculer_Duree());
-                       if (duree2.compareTo(this.mes_creneau.get(i).getDureeMin())>0)
-                       {
-                           this.mes_creneau.add(i,cr[0]);
-                           this.mes_creneau.add(i+1,cr[1]);
-                           creneau = this.mes_creneau.get(i);
-                           creneau.Planifier(tache);
-                           this.mes_creneau.get(i).setlibre(false);//set le creneau comme bloque
+            for (Creneau cre : this.mes_creneau) {
+                Duration dur = Duration.parse(cre.Calculer_Duree());
+                Duration dur1 = this.mes_taches.get(i).getDuree();
+                int tr = 0;
+                if ((dur.compareTo(dur1) >= 0) && cre.getlibre() == true) {
+                    tr = 1;
+                    cr = this.mes_creneau.get(i).decomposerCreneau(tache, creneau);//decomposition du creneau
+                    Duration duree2 = Duration.parse(cr[1].Calculer_Duree());
+                    if (duree2.compareTo(this.mes_creneau.get(i).getDureeMin()) > 0) {
+                        this.mes_creneau.add(i, cr[0]);
+                        this.mes_creneau.add(i + 1, cr[1]);
+                        creneau = this.mes_creneau.get(i);
+                        creneau.Planifier(tache);
+                        this.mes_creneau.get(i).setlibre(false);//set le creneau comme occupe
 
-                       }
-                       else
-                       {
-                           creneau.Planifier(tache);//le creneau sera allouè entierement à la tache
-                           this.mes_creneau.get(i).setlibre(false);//set le creneau comme bloque
+                    } else {
+                        creneau.Planifier(tache);//le creneau sera allouè entierement à la tache
+                        this.mes_creneau.get(i).setlibre(false);//set le creneau comme bloque
 
-                       }
-                       if (tr==0)//cas ou on trouve pas de crneau pour mettre la tache
-                       {
-                          if (tache.getDecomposable() == true)// si la tache est decomposable on opte à sa decomposition
-                          {
+                    }
+                    if (tr == 0)//cas ou on trouve pas de crneau pour mettre la tache
+                    {
+                        if (tache.getDecomposable() == true)// si la tache est decomposable on opte à sa decomposition
+                        {
+                            TacheDecomposable tachedec=(TacheDecomposable) tache;
+                             //on decompose la tache
+                        } else {
+                            tache_uns.add(tache);
+                            tache.setEtat("nonprogramme");
+                        }
 
-                          }
-                          else
-                          {
-                              tache_uns.add(tache);
-                              tache.setEtat("nonprogramme");
-                          }
+                    }
 
-                       }
+                }
+            }
 
-                   }
-           }
+        }
 
-              }}
-
-
+        return tache_uns;
+    }
 
     public void classer_taches( )
     {

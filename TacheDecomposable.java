@@ -15,7 +15,7 @@ public class TacheDecomposable extends Tache {
     public ArrayList<Tache> decomposer_tache()
     {
         return null;
-
+        
 
     }
 
